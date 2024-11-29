@@ -21,10 +21,13 @@ while type(b) != int:  # Обработка исключений
         b = int(input("Введите второе целое число : "))
 
 pro = 1
+count = a
+
 
 # Нахождение произведения всех целых чисел от A до B включительно
-for i in range(a,b+1):
-    pro *= i
+while count < b+1:
+    pro *= count
+    count += 1
 
 
 # Вывод результата
