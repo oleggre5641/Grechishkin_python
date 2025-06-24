@@ -53,3 +53,4 @@ class Motorcycle(Vehicle):
 # print("\nИнформация о мотоцикле:")
 # print(bike.info())
 # print(bike.boom())
+
