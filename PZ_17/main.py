@@ -104,4 +104,3 @@ knopka_cancel = tk.Button(knopka_frame, text="Cancel", command=zakrit, bg="#FF63
 knopka_cancel.pack(side=tk.RIGHT, padx=5)
 
 okno.mainloop()
-

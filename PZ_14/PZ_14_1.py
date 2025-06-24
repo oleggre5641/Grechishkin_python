@@ -16,4 +16,3 @@ def poisk_years(file_path):
 
 
 poisk_years("Dostoevsky.txt")
-
