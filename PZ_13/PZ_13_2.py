@@ -8,12 +8,10 @@ dv_spisok = [
 ]
 
 print("Исходный двумерный список : ")
-for m in dv_spisok:
-    print(m)
+list(map(print, dv_spisok))
 
-for n in dv_spisok:
-    n[-1] = -1
+dv_spisok = list(map(lambda row: row[:-1] + [-1], dv_spisok))  
 
 print("Измененный двумерный список : ")
-for a in dv_spisok:
-    print(a)
+list(map(print, dv_spisok)
+     
