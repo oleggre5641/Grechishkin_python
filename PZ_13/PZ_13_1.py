@@ -8,17 +8,11 @@ dv_spisok = [
 ]
 
 print("Исходный двумерный список:")
-for m in dv_spisok:
-    print(m)
+list(map(print, dv_spisok))
 
 n = int(input("Введите номер строки N (от 0 до 2): "))
 
-if 0 <= n < len(dv_spisok):
-    dv_spisok[n] = [x + 3 for x in dv_spisok[n]]
-else:
-    print(f"Строка с номером {dv_spisok} не существует")
+dv_spisok = list(map(lambda i, row: list(map(lambda x: x + 3, row)) if i == n else row, range(len(dv_spisok)), dv_spisok)) if 0 <= n < len(dv_spisok) else dv_spisok
 
 print(f"Двумерный список после увеличения элементов строки {n} на 3 : ")
-
-for a in dv_spisok:
-    print(a)
+list(map(print, dv_spisok))
