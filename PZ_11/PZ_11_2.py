@@ -11,14 +11,21 @@ with open('text18-7.txt', 'rb') as file:
     result = chardet.detect(raw_data)
     encoding = result['encoding']
 
-n = 0
-
 with open('text18-7.txt', 'r', encoding=encoding) as file:
-    a = file.read()
-    print(a)
-    for line in file:
-        for char in line:
-            if char.islower():
-                n += 1
+    lines = file.readlines()
+    content = ''.join(lines)
+    print(content)
+    
+    n = sum(1 for char in content if char.islower())
+    print(f'Количество букв в нижнем регистре: {n}')
 
-print(f'Количество букв в нижнем регистре : {n}')
+    if len(lines) >= 3:
+        new_lines = lines[:2] + [lines[-1]] + lines[2:-1]
+        new_content = ''.join(new_lines)
+    else:
+        print("Файл содержит меньше 3 строк, невозможно выполнить перестановку")
+        new_content = content
+
+with open('new_text18-7.txt', 'w', encoding=encoding) as file:
+    file.write(new_content)
+    print("Новый файл с переставленными строками создан: new_text18-7.txt")
